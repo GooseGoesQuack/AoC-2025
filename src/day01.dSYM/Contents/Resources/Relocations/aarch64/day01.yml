@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/goosegoesquack/repos/AoC-2025/src/day01'
+relocations:     []
+...
