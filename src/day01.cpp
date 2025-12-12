@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
+
 
 std::vector<std::string> readFile(const std::string& filename);
 void part1(const std::vector<std::string>& lines);
@@ -19,7 +21,7 @@ std::vector<std::string> readFile(const std::string& filename){
     std::vector<std::string> lines;
     std::string line;
     if (!file.is_open()) {
-        std::cerr << "Unable to open " << filename << ".\n";
+        std::cerr << "Failed to open " << filename << "\n";
         return lines;
     }
     while (std::getline(file, line)) {
