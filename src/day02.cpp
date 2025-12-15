@@ -13,7 +13,7 @@ void part2(const std::vector<std::string>& lines);
 
 int main() {
     std::vector<std::string> lines = readFile("../input/day02.txt");
-    // part1(lines);
+    part1(lines);
     part2(lines);
     return 0;
 }
@@ -53,16 +53,16 @@ void part1(const std::vector<std::string> &lines) {
 
 void part2(const std::vector<std::string> &lines) {
     std::vector<long long> invalid;
-    for (const auto& line : lines) {
+    for (const auto &line : lines) {
         size_t dashpos = line.find('-');
         std::pair<long, long> range = {std::stol(line.substr(0, dashpos)), std::stol(line.substr(dashpos+1))};
         
         for (long long id=range.first; id<=range.second; id++) {
             int length = std::to_string(id).length();
-            for (int mult=2; mult<=length; mult++) {
+            for (int mult=2; mult<=length; ++mult) {
                 if (length%mult==0) {
                     bool allsame = true;
-                    for (int i=1; i<=mult-1; i++) {
+                    for (std::size_t i=1; i<=mult-1; ++i) {
                         if (std::to_string(id).substr((i-1)*length/mult, length/mult)!=std::to_string(id).substr((i)*length/mult, length/mult)) {
                             allsame = false;
                         }
