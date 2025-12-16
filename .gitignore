@@ -1,3 +1,6 @@
+# Build files
+*.dSYM
+
 # Prerequisites
 *.d
 
